@@ -1,5 +1,3 @@
-Here is the translation of your README file into English for uploading to GitHub:
-
 ---
 
 # WarrantyBMW
