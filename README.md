@@ -2,62 +2,97 @@
 
 # WarrantyBMW
 
-## Project Description
+## Project Overview
 
-This repository demonstrates database functionalities for managing BMW warranty claims. The project includes various modules and data for automating the processing of BMW warranty claims and technical campaigns. The warranty claims processing module is not yet uploaded but will be added later.
+**WarrantyBMW** is a large-scale project aimed at automating the processing of BMW warranty claims and technical campaigns. The project consists of multiple modules, including dealer warranty processing workstations and technical campaign automation tools. Проект разрабатывался для внутреннего использования с русскоязычным интерфейсом. The repository will be populated progressively as the codebase is cleaned and translated.
 
 ---
 
 ## Repository Structure
 
-- **TechnicalCampaigns/**  
+- **/bmwActionTbl/** – Automation module for handling BMW **Technical Campaigns**.
+  - `bmwActionTbl.mdb` – Supporting database for processing technical campaigns.
+  - `/Modules/` – VBA modules exported from the database.
+  - `/Forms/` – Screenshots of key forms.
+  - `README.md` – Description of the database structure, key features, and list of included modules.
 
-  The main folder containing database files and modules responsible for processing BMW Technical Campaigns.
+- **/WarrantyWorkPlaceN/** – Workstation for specialists handling dealer warranty claims (Ukraine).
+  - `WarrantyWkstN.mdb` – Primary database file.
+  - `/Modules/` – Exported VBA modules (only completed ones, e.g., `dgPathGlgl`, `frFileSearch`).
+  - `/Forms/` – Screenshots of relevant forms.
+  - `README.md` – Description of features, forms, and included modules.
 
-  Includes:
+- **/WarrantyWorkPlaceM/** – Workstation for specialists handling dealer warranty claims (Kyiv).
+  - `WarrantyWkstM.mdb` – Primary database file.
+  - `/Modules/` – Exported VBA modules (only completed ones, e.g., `dgPathGlgl`, `frFileSearch`).
+  - `/Forms/` – Screenshots of relevant forms.
+  - `README.md` – Description of features, forms, and included modules.
 
-  - **PickTbl.doc** – A file with images of BMW structural groups.
-  - **acbMailMerge.doc** – A merge file template for generating customer letters.
-  - **bmwActionTbl.mdb** – A database with a suite of modules automating the technical campaigns' processing.
-  - **qsLetterSource.doc** – An auxiliary file for mail merge operations.
-  - **tmpNewTA.dot** – A template letter for customers.
+- **/WarrantyWorkPlaceA/** – Workstation for the warranty engineer - database administrator.
+  - `WarrantyWkstA.mdb` – Primary database file.
+  - `/Modules/` – Exported VBA modules (only completed ones, e.g., `dgPathGlgl`, `frFileSearch`).
+  - `/Forms/` – Screenshots of relevant forms.
+  - `README.md` – Description of features, forms, and included modules.
 
-  - **Modules/**  
+- **/sharedLibrary/** – Common library used across multiple projects.
+  - `README.md` – Documentation explaining the purpose of `libOB.mda`. The library is still in development and will be included once ready.
 
-    Contains VBA programming modules. Each file represents an individual module exported from the database.  
-
-    **File Descriptions:**
-
-    - **Form_frEntryNewTA.cls** – A module for automating the processing of a new technical campaign (campaign description, input of involved vehicles).
-    - **Form_frInfScan.cls** – A module for controlling customer notifications about technical campaigns.
-    - **Form_frTA.cls** – A module automating the main form `frTA`.
-    - **Form_sf2OrdItem.cls** – A module for automating the processing of part orders required for completing the technical campaign.
-    - **Form_sfDlv.cls** – A module for automating the processing of part deliveries required for completing the technical campaign.
-    - **Form_sfLetters.cls** – A module for automating the creation of customer notification letters about the technical campaign.
-    - **Form_sfOrders.cls** – A module for automating the subform of part orders required for technical campaigns.
-    - **Form_sfPartSum.cls** – A module for processing the calculation of part quantities (for different variations).
-    - **Form_sfParts_Veh.cls** – A module for processing navigation through records of vehicles involved in the technical campaign.
-    - **Form_sqParts_Parts.cls** – A module for automating the input of required parts for vehicles involved in the technical campaign.
-    - **MyFunktons.bas** – Global procedures and functions of the project.
-    - **basWord.bas** – A module for automating the conversion of database query results into a Word table.
+- **README.md (Main)** – This document, providing an overview of all projects, their structure, and setup instructions.
 
 ---
 
-## Key Features
+## Current Status
 
-- Automation of procedures for launching a new Technical Campaign.
-- Automation of customer letter creation.
-- Automation of part ordering and deliveries required for the technical campaign.
-- Control of customer notifications about technical campaigns.
+At present, only the **TechnicalCampaigns** module has been uploaded, and partial infrastructure has been created for **WarrantyWorkPlaceN**. The repository will be updated progressively as more components are prepared.
+
+### **TechnicalCampaigns Module**
+The **TechnicalCampaigns** module automates BMW **Technical Campaigns**, handling:
+- **Customer notifications.**
+- **Parts ordering and delivery tracking.**
+- **Campaign initiation and processing.**
+
+For detailed documentation, refer to `TechnicalCampaigns/README.md`.
+
+### **Warranty Processing Workstations**
+The main warranty processing database is split into three workstations:
+- **WarrantyWorkPlaceN** – Handling dealer warranty claims (Ukraine).
+- **WarrantyWorkPlaceM** – Handling dealer warranty claims (Kyiv).
+- **WarrantyWorkPlaceA** – Lead administrator workstation for managing the database.
+
+These workstations are still in progress and will be added once modules and forms are ready.
 
 ---
 
-## Installation and Launch
+## Setup Instructions
 
-Ensure that the Word files are located in the same folder as `bmwActionTbl.mdb`.
+### **Requirements**
+- **Microsoft Access** (MS Office XP or later recommended)
+- **Microsoft Office VBA support enabled**
+- Ensure necessary **VBA references** are enabled (Alt+F11 > Tools > References):
+  - Microsoft DAO 3.6 Object Library
+  - Microsoft ActiveX Data Objects (ADO)
+  - Microsoft Scripting Runtime
+  - Microsoft Office Object Library
+  - Microsoft Word Object Library
+  - Custom Library: `libOB.mda` (when available)
 
-List of referenced libraries (Alt+F11 > Tools > References):
+### **How to Open the Project**
+1. Download the required **.mdb** file from the repository.
+2. Place it in a **trusted location** in MS Access settings.
+3. Open the database in **MS Access**.
+4. Run the main form **frTA** (for Technical Campaigns) or relevant forms for Warranty Processing.
+
+For module-specific instructions, refer to the README files inside each subfolder.
 
 ---
 
-This file is now ready for use on GitHub. Let me know if further changes or additions are needed!
+## Future Plans
+- **Complete the translation of all modules and UI elements.**
+- **Gradually upload more components** of the warranty processing system.
+- **Finalize the shared library (********`libOB.mda`********).**
+- **Provide detailed documentation** for each module.
+
+This repository is a **work in progress**, and updates will be made as components become ready.
+
+For more details, refer to the respective `README.md` files in each subdirectory.
+
