@@ -24,7 +24,7 @@ Attribute VB_Exposed = False
 '       - sf2OrdItem             : Contents of the spare part orders (ordered items).
 '       - sfDlv                  : Information about spare part deliveries.
 '       - sf2DlvItem             : Contents of the spare part deliveries (delivered items).
-'   - sfStockCars (Stock tab)    : Displays vehicles in the importerís stock.
+'   - sfStockCars (Stock tab)    : Displays vehicles in the importer‚Äôs stock.
 '   - sfLetters (Letters tab)    : Manages client letters (generation, tracking dispatch, and delivery).
 '
 ' Key Features   :
@@ -154,7 +154,7 @@ Private Function FixPath(strPath As String) As String
 End Function
 ' -------------------------------------------------------------------
 ' Event #2        : cmdLetters_Click
-' Purpose         : Generates letters for a selected campaign using the required settings.
+' Purpose         : Generates letter to dealers for a selected campaign using the required settings.
 '                   Configures Microsoft Word mail merge and interacts with ActiveX components.
 ' Notes           :
 '   - Requires the following references:
@@ -300,7 +300,7 @@ Private Sub Form_Current()
     If Me.aStop Then
         ' Format the form for a stopped campaign:
         Me.aNo.ForeColor = 8421504                                      ' - Gray color for campaign number
-        Forms!frTA!‡Descr.ForeColor = 8421504                           ' - Gray color for campaign description
+        Forms!frTA!√†Descr.ForeColor = 8421504                           ' - Gray color for campaign description
         Me.lbRecall.ForeColor = 8421504                                 ' - Gray color for "Recall" label
         Me.lbStop.ForeColor = 255                                       ' - Red color for "Stop" label
         Me.lbStop.FontBold = True                                       ' - Bold font for the "Stop" label
@@ -308,7 +308,7 @@ Private Sub Form_Current()
     Else
         ' Format the form for an active campaign:
         Me.aNo.ForeColor = 16711680                                     ' - Bright red color for campaign number
-        Forms!frTA!‡Descr.ForeColor = 16711680                          ' - Bright red color for campaign description
+        Forms!frTA!√†Descr.ForeColor = 16711680                          ' - Bright red color for campaign description
         Me.lbRecall.ForeColor = 255                                     ' - Red color for "Recall" label
         Me.lbStop.ForeColor = -2147483630                               ' - Default label color for "Stop."
         Me.lbStop.FontBold = False                                      ' - Normal font for the "Stop" label
