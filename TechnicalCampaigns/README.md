@@ -40,10 +40,6 @@ This module is part of the **WarrantyBMW** repository and is responsible for pro
     - **Form_sqParts_Parts.cls** – Automates the input of required parts for vehicles involved in the technical campaign.
     - **MyFunktons.bas** – Global procedures and functions of the project.
     - **basWord.bas** – Automates the conversion of database query results into a Word table.
-    - **BSI_Class.cls** – Checks whether BSI (BMW Service Inclusive) reports need to be generated.
-    - **CClipboard_Class.cls** – Manages clipboard operations.
-    - **DivQ_Class.cls** – Handles discrepancies in approved part quantities.
-    - **NewCredit_Class.cls** – Imports and processes new credit data.
 
 ---
 
@@ -54,8 +50,7 @@ This module is part of the **WarrantyBMW** repository and is responsible for pro
 - **Management of part ordering and deliveries.**
 - **Customer notification tracking and control.**
 - **Calculation of required part quantities.**
-- **Discrepancy handling for approved part quantities.**
-- **Processing new credit data related to technical campaigns.**
+- **Creation of reports on the status of Technical Campaigns fulfillment.**
 
 ---
 
@@ -67,11 +62,15 @@ Ensure that the Word files are located in the same folder as `bmwActionTbl.mdb`.
 ### **Referenced Libraries**
 To run the modules properly, enable the following libraries in MS Access (Alt+F11 > Tools > References):
 
-- Microsoft DAO 3.6 Object Library
-- Microsoft ActiveX Data Objects (ADO)
-- Microsoft Scripting Runtime
-- Microsoft Office Object Library
-- Microsoft Word Object Library
+- Visual Basic For Applications
+- Microsoft Access 16.0 Object Library
+- OLE Automation
+- Microsoft Office 16.0 Access database engine Object Library
+- Microsoft Word 16.0 Object Library
+- Microsoft Office 16.0 Object Library
+- Microsoft Visual Basic for Applicatons for Applications Extensibility 5.3
+- Microsoft ActiveX Data Objects 2.1 Library
+- Microsoft Outlook 16.0 Object Library
 - Custom Library: `libOB.mda` (if applicable)
 
 ### **Steps to Launch**
